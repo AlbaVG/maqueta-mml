@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Wireframe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">[LOGO]</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mis-programas.html">Mis Programas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Otros Programas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Mi Perfil</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4 text-center">Últimas Novedades</h2>
+                
+                <div class="card mb-5">
+                    <div class="img-placeholder" style="height: 300px;">FOTO DEL EVENTO/PROMO</div>
+                    <div class="card-body">
+                        <small class="text-muted">Publicado el 12 Octubre 2024</small>
+                        <h3 class="card-title mt-2">¡Sorteo en nuestro Instagram!</h3>
+                        <p class="card-text">
+                            Estamos realizando una actividad promocional en nuestras redes sociales. 
+                            Participa subiendo tu foto entrenando y etiquétanos para ganar un acceso gratuito 
+                            al programa de mantenimiento.
+                            [Aquí iría más texto de relleno simulando el contenido del artículo...]
+                        </p>
+                        <hr>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-outline-danger btn-sm me-2" id="likeBtn" onclick="toggleLike()">
+                                <i class="bi bi-heart" id="heartIcon"></i> Me gusta
+                            </button>
+                            <span class="text-muted" id="likeCount">124 personas le gusta esto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-5 opacity-75">
+                    <div class="card-body">
+                        <small class="text-muted">Publicado el 01 Septiembre 2024</small>
+                        <h4 class="card-title">Beneficios del agua fría</h4>
+                        <p class="card-text">Resumen breve del artículo anterior...</p>
+                        <a href="#" class="text-dark">Leer más</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script simple para simular el like
+        let liked = false;
+        function toggleLike() {
+            const btn = document.getElementById('likeBtn');
+            const icon = document.getElementById('heartIcon');
+            const count = document.getElementById('likeCount');
+            
+            if (!liked) {
+                btn.classList.remove('btn-outline-danger');
+                btn.classList.add('btn-danger');
+                icon.classList.remove('bi-heart');
+                icon.classList.add('bi-heart-fill');
+                count.innerText = "125 personas le gusta esto";
+                liked = true;
+            } else {
+                btn.classList.add('btn-outline-danger');
+                btn.classList.remove('btn-danger');
+                icon.classList.add('bi-heart');
+                icon.classList.remove('bi-heart-fill');
+                count.innerText = "124 personas le gusta esto";
+                liked = false;
+            }
+        }
+    </script>
+    <footer class="text-center">
+        <p class="text-muted">© 2024 Movimiento Lipedema - TFG Mockup</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
